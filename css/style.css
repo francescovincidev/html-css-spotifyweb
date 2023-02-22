@@ -9,10 +9,97 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+/* VARIABLES */
+:root {
+  --player-height: 60px;
+  --nav-width:200px;
+}
+
 /* COMMON */
 .wrapper{
     height: 100vh;
     width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* CONTAINER */
+.container{
+    height: calc(100% - var(--player-height));
+    width: 100%;
+}
+
+
+
+/* NAVIGATON MENU */
+nav{
+    height: 100%;
+    width: var(--nav-width);
+    background-color: black;
+}
+
+/* CONTENT */
+#content{
+    width: 100%;
+    height: 100%;
+    background-color: #141922;
+    overflow-y: auto;
+}
+
+/* upgrade bar */
+#content .upgrade-bar{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.50);
+
+}
+
+/* section bar */
+#content .section-bar ul{
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    color: white;
+}
+
+/* albums */
+
+.albums{
+
+}
+.cover{
+    width: 200px;
+    /* flex-shrink: 0; */
+    /* debug */
+    height: 200px;
+    background-color: white;
+}
+
+/* recently played */
+.recently-played{
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* gap: 20px; */
+
+}
+
+/* PLAYER */
+.player{
+    height: var(--player-height);
+    width: 100%;
+    background-color: #282828;
 }
 
 
@@ -33,6 +120,31 @@ body{
 }
 
 @media screen and  (max-width:600px) {
+    /* CONTAINER */
+.container{
+    
+}
+
+
+
+/* NAVIGATON MENU */
+nav{
+    width: 50px;
+    
+}
+
+/* CONTENT */
+.content{
+    
+}
+
+
+/* PLAYER */
+.player{
+    
+}
+
+
     
     
 }
