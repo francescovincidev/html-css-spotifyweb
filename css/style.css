@@ -104,7 +104,7 @@ nav .green-vertical{
 }
 
 /* explorer hover */
-nav .explorer-option.home:hover img, 
+nav .explorer-option.home:hover img,
 nav .explorer-option.search:hover img,
 nav .explorer-option.libreria:hover img{
     opacity: 1;
@@ -168,7 +168,8 @@ nav .playlist .playlist-created li{
 }
 
 /* playlist hover */
-nav .playlist .new-playlist:hover i, .playlist .new-playlist:hover div{
+nav .playlist .new-playlist:hover i,
+nav .playlist .new-playlist:hover div{
     color: white;
 }
 
@@ -185,7 +186,7 @@ nav .user a{
 
 nav .user .download{
     font-size: .7rem;
-    
+
     padding: 0 0 0 18px;
 }
 
@@ -243,15 +244,23 @@ nav .user .user-account img{
     padding: .6rem 1.5rem;
     border: 2px solid white;
     border-radius: 20px;
-    margin: 5px;
-
-
-
+    margin-right: 18px;
+    transition: .1s;
 }
+
+/* upgrade bar hover */
+#content .upgrade-bar .upgrade-btn:hover{
+    color: #1DB954;
+    border: 2px solid #1DB954;
+    /* font-size: .8rem; */
+    transform: scale(1.2);
+}
+
 
 /* section bar */
 #content .section-bar ul{
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem 0;
     color: var(--grey-transparent);
@@ -259,6 +268,35 @@ nav .user .user-account img{
     font-weight: bold;
     font-size: .7rem;
 }
+
+#content .section-bar ul a{
+    position: relative;
+
+}
+
+#content .section-bar ul .green-orizontal{
+    height: 3px;
+    width: 30px;
+    background-color: #1DB954;
+    margin: 0 auto;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    display: none;
+
+}
+
+/* section bar hover */
+#content .section-bar ul a:hover{
+    color: white;
+}
+
+#content .section-bar ul a:hover .green-orizontal{
+    display: block;
+}
+
+
 
 /* albums */
 
@@ -275,14 +313,27 @@ nav .user .user-account img{
 }
 
 #content .albums a{
-    width: calc(100%/7);
-    min-width: 100px;
-    max-width: 150px;
+    width: 100%;
 }
 
 #content .cover{
+    width: calc(100%/7 - 16px);
     padding-top: 1rem;
-    width: 100%;
+}
+
+#content .cover-img{
+    position: relative;
+}
+
+#content .cover-img i{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 3rem;
+    color: white;
+    display: none;
+    
 }
 
 #content .album-name{
@@ -330,6 +381,17 @@ nav .user .user-account img{
     clip-path: circle();
 }
 
+
+
+/* albums hover */
+#content .albums .cover a:hover img{
+    opacity: .5;
+}
+
+#content .albums .cover a:hover .cover-img i{
+    display: block;
+}
+
 /* PLAYER */
 #player{
     height: var(--player-height);
@@ -355,8 +417,7 @@ nav .user .user-account img{
 #player .player-left .name-artist{
     font-weight: bold;
     margin: auto 5px;
-    flex-shrink: 0;
-
+    white-space: nowrap;
 }
 
 #player .player-left .song-name{
@@ -412,7 +473,7 @@ nav .user .user-account img{
 #player .player-center .player-bar{
     align-items: baseline;
     justify-content: center;
-    
+
 }
 #player .player-center .player-bar .duration-bar{
     width: 60%;
@@ -428,7 +489,7 @@ nav .user .user-account img{
     background-color: white;
 
     border-radius: 5px;
-    
+
 }
 
 /* player right */
@@ -446,7 +507,7 @@ nav .user .user-account img{
     height: 3px;
     background-color: var(--grey-transparent);
     border-radius: 5px;
-    
+
 }
 
 #player .player-right .volume-bar .riproducing-volume-bar{
@@ -466,12 +527,26 @@ nav .user .user-account img{
 
 /* DESKTOP MEDIUM MD */
 @media screen and  (max-width:1100px) {
-    
-    
+    /* CONTAINER */
+    /* CONTENT */
+    /* album */
+    #content .cover{
+    width: calc(100%/4 - 16px);
+
+    }
+
+
 }
 
 /* TABLET S */
 @media screen and  (max-width:700px) {
+    /* CONTAINER */
+    /* CONTENT */
+    /* album */
+    #content .cover{
+        width: calc(100%/2 - 16px);
+
+    }
 
 
 
@@ -483,29 +558,30 @@ nav .user .user-account img{
         margin: auto 5px;
     }
 
+
+
     #player .player-left .favourite-folder{
         flex-direction: column;
         gap: 0;
     }
-    
+
+    /* player center */
+    #player .player-center .player-btn{
+        gap: 0;
+    }
+
 }
 
 
 /* MOBILE XS */
 @media screen and  (max-width:600px) {
-    /* CONTAINER */
-    .container{
-    
-    }
-
-
 
     /* NAVIGATON MENU */
 
     :root {
     --nav-width:50px;
     }
-  
+
     nav{
     width: 50px;
     }
@@ -566,16 +642,6 @@ nav .user .user-account img{
         display: none;
     }
 
-
-
-
-    /* CONTENT */
-    .content{
-        
-    }
-
-
-
     /* PLAYER */
     /* player left */
     #player .player-left .song-cover{
@@ -584,6 +650,11 @@ nav .user .user-account img{
 
     }
 
-        
-        
+    #player .player-left .name-artist{
+
+        white-space: normal;
+    }
+
+
+
     }
