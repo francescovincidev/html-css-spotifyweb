@@ -124,7 +124,6 @@ nav .explorer-option.libreria:hover .green-vertical{
 
 
 
-
 /* playlist */
 nav .playlist{
     margin-left:20px;
@@ -186,7 +185,6 @@ nav .user a{
 
 nav .user .download{
     font-size: .7rem;
-
     padding: 0 0 0 18px;
 }
 
@@ -214,7 +212,10 @@ nav .user .user-account img{
     clip-path: circle();
 }
 
-
+/* user hover */
+nav .user .download a:hover {
+    color: white;
+}
 
 
 
@@ -271,7 +272,6 @@ nav .user .user-account img{
 
 #content .section-bar ul a{
     position: relative;
-
 }
 
 #content .section-bar ul .green-orizontal{
@@ -284,7 +284,6 @@ nav .user .user-account img{
     left: 0;
     right: 0;
     display: none;
-
 }
 
 /* section bar hover */
@@ -332,8 +331,7 @@ nav .user .user-account img{
     left: 50%;
     font-size: 3rem;
     color: white;
-    display: none;
-    
+    display: none;  
 }
 
 #content .album-name{
@@ -436,6 +434,24 @@ nav .user .user-account img{
     width: 50%;
 }
 
+#player .player-left .favourite-folder .favourite-full{
+    color: #1DB954;
+    display: none;
+}
+
+/* player left hover */
+#player .player-left .song-artist:hover{
+    color: white;
+}
+
+#player .player-left .favourite-folder a:hover .favourite-empty{
+    display: none;
+}
+
+#player .player-left .favourite-folder a:hover .favourite-full{
+    display: inline-block;
+}
+
 /* player center */
 /* player btn */
 #player .player-center{
@@ -447,7 +463,7 @@ nav .user .user-account img{
 #player .player-center .player-btn{
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
 }
 
 #player .player-center .player-btn .center-btn{
@@ -459,8 +475,15 @@ nav .user .user-account img{
     font-size: 1rem;
 }
 
-#player .player-center .player-btn i{
-    padding: 0 5px;
+#player .player-center .player-btn a{
+    margin: 0 10px;
+}
+
+/* player center btn hover */
+#player .player-center .player-btn a:hover i{
+    transform: scale(1.6);
+    transition: .1s;
+    color: #1DB954;
 }
 
 /* player bar */
@@ -469,13 +492,17 @@ nav .user .user-account img{
     font-weight: bold;
 }
 
+#player .player-center .player-bar .riproducing-time,
+#player .player-center .player-bar .duration-time{
+    align-self: flex-end;
+    margin-bottom: 15px;
+}
 
 #player .player-center .player-bar{
-    align-items: baseline;
     justify-content: center;
-
 }
-#player .player-center .player-bar .duration-bar{
+
+#player .player-center .player-bar a{
     width: 60%;
     height: 3px;
     background-color: var(--grey-transparent);
@@ -487,10 +514,30 @@ nav .user .user-account img{
     width: 20%;
     height: 3px;
     background-color: white;
-
     border-radius: 5px;
-
+    justify-content: flex-end;
 }
+
+#player .player-center .player-bar .duration-bar .riproducing-bar .riproducing-circle{
+    width: 10px;
+    height: 10px;
+    align-self: center;
+    border-radius: 50%;
+    transition: .1s;
+    transform: translate(50%);
+}
+
+
+
+/* player-bar hover */
+#player .player-center .player-bar .duration-bar:hover .riproducing-bar{
+    background-color: #1DB954;
+}
+
+#player .player-center .player-bar .duration-bar:hover .riproducing-bar .riproducing-circle{ 
+    background-color: white;    
+}
+
 
 /* player right */
 #player .player-right{
@@ -502,12 +549,12 @@ nav .user .user-account img{
     gap: 10px;
     font-size: .8rem;
 }
+
 #player .player-right .volume-bar{
     width: 75px;
     height: 3px;
     background-color: var(--grey-transparent);
     border-radius: 5px;
-
 }
 
 #player .player-right .volume-bar .riproducing-volume-bar{
@@ -515,10 +562,22 @@ nav .user .user-account img{
     height: 3px;
     background-color: white;
     border-radius: 5px;
+    justify-content: flex-end;
 }
 
+#player .player-right .volume-bar .riproducing-volume-bar .volume-circle{
+    width: 10px;
+    height: 10px;
+    align-self: center;
+    border-radius: 50%;
+    transition: .1s;
+    transform: translate(50%);
+}
 
-
+/* player right hover */
+#player .player-right .volume-bar:hover .riproducing-volume-bar .volume-circle{
+    background-color: white;
+}
 
 
 
@@ -532,9 +591,7 @@ nav .user .user-account img{
     /* album */
     #content .cover{
     width: calc(100%/4 - 16px);
-
     }
-
 
 }
 
@@ -545,10 +602,7 @@ nav .user .user-account img{
     /* album */
     #content .cover{
         width: calc(100%/2 - 16px);
-
     }
-
-
 
     /* PLAYER */
     /* player left */
@@ -577,7 +631,6 @@ nav .user .user-account img{
 @media screen and  (max-width:600px) {
 
     /* NAVIGATON MENU */
-
     :root {
     --nav-width:50px;
     }
@@ -636,7 +689,6 @@ nav .user .user-account img{
     nav .user .user-account, nav .user .download{
         padding: 0;
     }
-
 
     nav hr{
         display: none;
